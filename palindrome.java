@@ -5,12 +5,21 @@ import java.util.Stack;
 public class palindrome {
 
 	//iterative
+	/*
+	 * 
+		[solution]
+		use two pointers, slow runner moves one step every time and fast runner moves two steps each time. push the first half of the list into a stack and compare the second half with the pop value of the stack.
+		[time]
+		O(n)
+		[space]
+		O(n)
+	 */
 	public boolean isPalindrome(ListNode head){
 		if(head == null || head.next == null) return true;
 		Stack<Integer> s = new Stack<Integer>();
 		ListNode slow = head;
 		ListNode fast = head;
-		while(fast.next != null){
+		while(fast != null && fast.next != null){
 			s.push(slow.data);
 			slow = slow.next;
 			fast = fast.next.next;

@@ -25,6 +25,14 @@ public class kthToLast {
 		return n;
 	}
 	
+	/*
+	 * ¡¾solution¡¿
+		use two pointers, firstly move fast runner k-1 steps forward, and then move two pointers both one step everytime until the fast runner hit the end, return the slow runner
+		¡¾time¡¿
+		O(n)
+		¡¾space¡¿
+		O(1)
+	 */
 	public ListNode kthToLastE_iterative(ListNode head, int k){
 		if(head == null || k <= 0) return null;
 		
