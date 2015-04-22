@@ -1,9 +1,9 @@
-package CC150;
+package CTCI.CTCILibrary;
 
 public class ListNode {
 
-	int data;
-	ListNode next;
+	public int data;
+	public ListNode next;
 	public ListNode(){
 		
 	}

@@ -1,4 +1,4 @@
-package CC150;
+package CTCI.Chapter3;
 
 import java.util.Stack;
 

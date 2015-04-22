@@ -1,4 +1,6 @@
-package CC150;
+package CTCI.Chapter1;
+
+import CTCI.CTCILibrary.AssortedMethods;
 
 //C1-1.7
 public class matrix_zero {
@@ -14,7 +16,7 @@ public class matrix_zero {
 	[space]
 	O(m+n)
 	 */
-	public void set_zero(int[][] matrix){
+	public static void set_zero(int[][] matrix){
 		if(matrix == null) return;
 		int m = matrix.length;
 		int n = matrix[0].length;
@@ -36,5 +38,16 @@ public class matrix_zero {
 					matrix[i][j] = 0;
 				}
 			}
+	}
+	
+	public static void main(String[] args){
+		int[][] matrix = AssortedMethods.randomMatrix(10, 15, 0, 100);
+		
+		matrix[5][7] = 0;
+		AssortedMethods.printMatrix(matrix);
+		
+		System.out.println();
+		set_zero(matrix);
+		AssortedMethods.printMatrix(matrix);
 	}
 }

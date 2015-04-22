@@ -1,4 +1,4 @@
-package CC150;
+package CTCI.Chapter1;
 
 //C1-1.5
 public class compress {
@@ -13,7 +13,7 @@ public class compress {
 	[space]
 	O(n)
 	 */
-	public String compressStr(String s){
+	public static String compressStr(String s){
 		if(s == null) return null;
 		/*int length = s.length();
 		int new_length = compressedLength(s);
@@ -62,4 +62,11 @@ public class compress {
 		res += 1 + String.valueOf(count).length();
 		return res;
 	}*/
+	
+	public static void main(String[] args){
+		String str = "abbcccccccccde";
+		System.out.println(str + " " + compressStr(str));
+		str = "abcde";
+		System.out.println(str + " " + compressStr(str));
+	}
 }

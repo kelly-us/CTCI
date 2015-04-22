@@ -1,14 +1,14 @@
-package CC150;
+package CTCI.Chapter2;
 
-import CC150.ListNode;
+import CTCI.CTCILibrary.ListNode;
 
 //C2-2.2 iterative solution is easy, recursive is not
 public class kthToLast {
 
 	private static int res = -1;
-	public int kthToLastE_recursive(ListNode head, int k){
+	public static int kth_recursive(ListNode head, int k){
 		if(head == null) return 0;
-		int counter = kthToLastE_recursive(head.next,k) + 1;
+		int counter = kth_recursive(head.next,k) + 1;
 		if(counter == k){
 			res = head.data;
 		}
@@ -17,23 +17,23 @@ public class kthToLast {
 	
 	
 	private static int counter = 0;
-	public ListNode kth_recursive(ListNode head, int k){
+	public static ListNode kth_recursive_2(ListNode head, int k){
 		if(head == null) return null;
-		ListNode n = kth_recursive(head.next, k);
+		ListNode n = kth_recursive_2(head.next, k);
 		counter++;
 		if(counter == k) return head;
 		return n;
 	}
 	
 	/*
-	 * ¡¾solution¡¿
+	 * [solution]
 		use two pointers, firstly move fast runner k-1 steps forward, and then move two pointers both one step everytime until the fast runner hit the end, return the slow runner
-		¡¾time¡¿
+		[time]
 		O(n)
-		¡¾space¡¿
+		[space]
 		O(1)
 	 */
-	public ListNode kthToLastE_iterative(ListNode head, int k){
+	public static ListNode kthToLastE_iterative(ListNode head, int k){
 		if(head == null || k <= 0) return null;
 		
 		ListNode p1 = head;
@@ -54,4 +54,8 @@ public class kthToLast {
 		return p1;
 	}
 	
+	
+	public static void main(String[] args){
+		
+	}
 }

@@ -1,18 +1,17 @@
-package CC150;
+package CTCI.Chapter2;
 
 import java.util.HashMap;
-import CC150.ListNode;
-
+import CTCI.CTCILibrary.ListNode;
 //C2-2.1
 public class removeDup {
 
 	/*
 	 * 
-	¡¾solution¡¿
+	[solution]
 	With extra buffer: use a hashmap to store the element and  remove the dup if it already exists in the hashmap
 	Without extra buffer: use two pointers, one to indicate the current element, one to iterate through the rest of the linkedlist to remove dup.
-	¡¾time¡¿O(N) or O(N^2)
-	¡¾space¡¿O(N) or O(1)
+	[time]O(N) or O(N^2)
+	[space]O(N) or O(1)
 	 */
 	public void removeDuplicate(ListNode head){
 		if(head == null || head.next == null) return;
@@ -51,6 +50,10 @@ public class removeDup {
 			cur = cur.next;
 			
 		}
+	}
+	
+	public static void main(String[] args){
+		
 	}
 	
 }

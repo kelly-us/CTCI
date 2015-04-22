@@ -1,10 +1,10 @@
-package CC150;
+package CTCI.Chapter3;
 
 public class stackWithArray {
 	//fix division
-	int stackSize = 100;
-	int[] buffer = new int[stackSize * 3];
-	int[] stackPointer = {-1, -1, -1};
+	static int stackSize = 100;
+	static int[] buffer = new int[stackSize * 3];
+	static int[] stackPointer = {-1, -1, -1};
 	
 	public void push(int val, int stackIndex) throws Exception{
 		if(stackPointer[stackIndex] + 1 >= stackSize){

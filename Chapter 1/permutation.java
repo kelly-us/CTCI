@@ -1,4 +1,4 @@
-package CC150;
+package CTCI.Chapter1;
 
 import java.util.Arrays;
 
@@ -6,13 +6,13 @@ import java.util.Arrays;
 public class permutation {
 
 	//string permutation??anagram comparison is case sensitive and whitespace significant
-	public boolean isPerm(String s, String t){
+	public static boolean isPerm(String s, String t){
 		if(s == null || t == null || s.length() != t.length()) return false;
 		
 		return sort(s).equals(sort(t));
 	}
 	
-	public String sort(String s){
+	public static String sort(String s){
 		char[] c = s.toCharArray();
 		Arrays.sort(c);
 		return new String(c);
@@ -31,7 +31,7 @@ public class permutation {
 	[space complexity]
 	O(1)
 	 */
-	public boolean isPerm_count(String s, String t){
+	public static boolean isPerm_count(String s, String t){
 		if(s == null || t == null || s.length() != t.length()) return false;
 		
 		int[] count = new int[256];
@@ -50,5 +50,13 @@ public class permutation {
 		}
 		
 		return true;
+	}
+	
+	public static void main(String[] args){
+		String[][] pairs = {{"apple", "papel"}, {"carrot", "tarroc"}, {"hello", "llloh"}};
+		for(String[] pair : pairs){
+			System.out.println(pair[0] + "," + pair[1]);
+			System.out.println(isPerm(pair[0], pair[1]) + "," + isPerm_count(pair[0], pair[1]));
+		}
 	}
 }

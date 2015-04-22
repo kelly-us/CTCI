@@ -1,10 +1,12 @@
-package CC150;
+package CTCI.Chapter1;
+
+import CTCI.CTCILibrary.AssortedMethods;
 
 //C1-1.6
 public class rotate {
 	
 	//clockwise or anticlockwise
-	public void rotateMatrix(int[][] matrix){
+	public static void rotateMatrix(int[][] matrix){
 		int n = matrix.length;
 		//layer
 		for(int k = 0; k < n/2; k++){
@@ -30,14 +32,14 @@ public class rotate {
 		}
 	}
 	/*
-	 * ¡¾solution¡¿
+	 *  [solution]
 		transpose the image and then reverse the rows
-		¡¾time¡¿
+		[time]
 		O(N^2) 
-		¡¾space¡¿
+		[space]
 		O(1)
 	 */
-	public void rotateMatrix_2(int[][] matrix){
+	public static void rotateMatrix_2(int[][] matrix){
 		int n = matrix.length;
 		
 		//transpose 
@@ -57,6 +59,21 @@ public class rotate {
 				matrix[n-i-1][j] = t;
 			}
 		}
+	}
+	
+	
+	public static void main(String[] args){
+		int[][] matrix = AssortedMethods.randomMatrix(10, 10, 0, 9);
+		AssortedMethods.printMatrix(matrix);
+		System.out.println();
+		
+		rotateMatrix(matrix);
+		AssortedMethods.printMatrix(matrix);
+		System.out.println();
+		
+		
+		rotateMatrix_2(matrix);
+		AssortedMethods.printMatrix(matrix);
 	}
 }
 

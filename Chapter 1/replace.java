@@ -1,4 +1,4 @@
-package CC150;
+package CTCI.Chapter1;
 
 //C1-1.4
 public class replace {
@@ -16,7 +16,7 @@ public class replace {
 	[space complexity]
 	O(1)
 	 */
-	public void replaceSpace(char[] str, int l){
+	public static void replaceSpace(char[] str, int l){
 		int count = 0;
 		for(int i = 0; i < l; i++){
 			if(str[i] == ' ')
@@ -36,8 +36,16 @@ public class replace {
 				str[idx--] = '%';
 			}
 		}
-		
-		
+	}
+	
+	public static void main(String[] args){
+		String str = "abc d e f";
+		char[] buffer = new char[str.length() + 3 * 2 + 1];
+		for(int i = 0; i < str.length(); ++i){
+			buffer[i] = str.charAt(i);
+		}
+		replaceSpace(buffer, str.length());
+		System.out.println(buffer);
 	}
 	
 	

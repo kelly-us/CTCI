@@ -1,5 +1,6 @@
-package CC150;
+package CTCI.Chapter2;
 
+import CTCI.CTCILibrary.ListNode;
 import java.util.Stack;
 //Chapter2-2.7
 public class palindrome {

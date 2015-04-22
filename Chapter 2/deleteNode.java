@@ -1,6 +1,6 @@
-package CC150;
+package CTCI.Chapter2;
 
-import CC150.ListNode;
+import CTCI.CTCILibrary.ListNode;
 
 //C2-2.3
 public class deleteNode {
