@@ -50,4 +50,12 @@ public class AssortedMethods {
 		return root;
 	}
 	
+	public static String arrayToString(int[] data){
+		StringBuilder sb = new StringBuilder();
+		for(int v: data){
+			sb.append(v + ", ");
+		}
+		return sb.toString();
+	}
+	
 }
