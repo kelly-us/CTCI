@@ -1,5 +1,6 @@
 package CTCI.Chapter2;
 
+import CTCI.CTCILibrary.AssortedMethods;
 import CTCI.CTCILibrary.ListNode;
 
 //C2-2.2 iterative solution is easy, recursive is not
@@ -56,6 +57,22 @@ public class kthToLast {
 	
 	
 	public static void main(String[] args){
+		ListNode head = AssortedMethods.randomLinkedList(10, 0, 10);
+		System.out.println(head.printForward());
+		
+		int nth = 3;
+		int n1 = kth_recursive(head, nth);
+		if(res == -1){
+			System.out.println("Null. n is out of bounds");
+		}else{
+			System.out.println(nth + "th to last element is " + res);
+		}
+		ListNode n2 = kth_recursive_2(head, nth);
+		if(n2 != null)
+			System.out.println(n2.data);
+		ListNode n3 = kthToLastE_iterative(head, nth);
+		if(n3 != null)
+			System.out.println(n3.data);
 		
 	}
 }

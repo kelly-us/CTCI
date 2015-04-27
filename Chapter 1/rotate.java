@@ -42,14 +42,25 @@ public class rotate {
 	public static void rotateMatrix_2(int[][] matrix){
 		int n = matrix.length;
 		
-		//transpose 
-		for(int i = 1; i < n; ++i){
-			for(int j = n-i; j < n; ++j){
+		//clockwise: transpose the image by the the topRight-bottomLeft diagonal
+		for(int i = 0; i < n; ++i){
+			for(int j = 0; j < n-i; ++j){
+				int t = matrix[i][j];
+				matrix[i][j] = matrix[n-1-j][n-1-i];
+				matrix[n-1-j][n-1-i] = t;
+			}
+		}
+		
+		//anticlockwise: transpose the image by the primary diagonal
+		/*
+		for(int i = 0; i < n; ++i){
+			for(int j = i + 1; j < n; ++j){
 				int t = matrix[i][j];
 				matrix[i][j] = matrix[j][i];
 				matrix[j][i] = t;
 			}
 		}
+		*/
 		
 		//reverse rows
 		for(int i = 0; i< n/2; ++i){

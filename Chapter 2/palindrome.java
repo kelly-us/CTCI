@@ -15,7 +15,7 @@ public class palindrome {
 		[space]
 		O(n)
 	 */
-	public boolean isPalindrome(ListNode head){
+	public static boolean isPalindrome(ListNode head){
 		if(head == null || head.next == null) return true;
 		Stack<Integer> s = new Stack<Integer>();
 		ListNode slow = head;
@@ -40,8 +40,8 @@ public class palindrome {
 	}
 	
 	//recursive
-	public boolean ans = true;
-	public boolean isPalindrome_recursive(ListNode head){
+	public static boolean ans = true;
+	public static boolean isPalindrome_recursive(ListNode head){
 		if(head == null || head.next == null) return true;
 		
 		int len = length(head);
@@ -50,7 +50,7 @@ public class palindrome {
 		
 	}
 	
-	public ListNode isPalindromeHelper_recursive(ListNode head, int len){
+	public static ListNode isPalindromeHelper_recursive(ListNode head, int len){
 		if(head == null || len == 0){
 			return head;
 		}
@@ -65,13 +65,28 @@ public class palindrome {
 		return n.next;
 	}
 	
-	public int length(ListNode head){
+	public static int length(ListNode head){
 		int res = 0;
 		while(head != null){
 			res++;
 			head = head.next;
 		}
 		return res;
+	}
+	
+	public static void main(String[] args){
+		int length = 10;
+		ListNode[] nodes = new ListNode[length];
+		for(int i = 0; i < length; ++i){
+			nodes[i] = new ListNode(i >= length / 2 ? length - 1 - i : i, null, i > 0 ? nodes[i-1] : null);
+		}
+		
+		ListNode head = nodes[0];
+		System.out.println(head.printForward());
+		
+		System.out.println("isPalindrome : " + isPalindrome(head));
+		System.out.println(isPalindrome_recursive(head));
+		
 	}
 	
 }

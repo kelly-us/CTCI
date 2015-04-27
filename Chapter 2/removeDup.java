@@ -1,6 +1,10 @@
 package CTCI.Chapter2;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
+import CTCI.CTCILibrary.AssortedMethods;
 import CTCI.CTCILibrary.ListNode;
 //C2-2.1
 public class removeDup {
@@ -8,20 +12,20 @@ public class removeDup {
 	/*
 	 * 
 	[solution]
-	With extra buffer: use a hashmap to store the element and  remove the dup if it already exists in the hashmap
+	With extra buffer: use a hashset to store the element and  remove the dup if it already exists in the hashset
 	Without extra buffer: use two pointers, one to indicate the current element, one to iterate through the rest of the linkedlist to remove dup.
 	[time]O(N) or O(N^2)
 	[space]O(N) or O(1)
 	 */
-	public void removeDuplicate(ListNode head){
+	public static void removeDuplicate(ListNode head){
 		if(head == null || head.next == null) return;
 		
-		HashMap<Integer, Boolean> map = new HashMap<Integer, Boolean>();
+		Set<Integer> s = new HashSet<Integer>();
 		ListNode cur = head;
 		ListNode prev = null;
 		while(cur != null){
-			if(map.get(cur.data) != true){
-				map.put(cur.data, true);
+			if(!s.contains(cur.data)){
+				s.add(cur.data);
 				prev = cur;
 			}
 			else{
@@ -33,7 +37,7 @@ public class removeDup {
 	}
 	
 	//Follow up
-	public void removeDuplicate_runner(ListNode head){
+	public static void removeDuplicate_runner(ListNode head){
 		if(head == null || head.next == null) return;
 		
 		ListNode cur = head;
@@ -53,7 +57,13 @@ public class removeDup {
 	}
 	
 	public static void main(String[] args){
-		
+		ListNode head = AssortedMethods.randomLinkedList(30, 0, 2);
+		System.out.println(head.printForward());
+		ListNode clone = head.clone();
+		removeDuplicate(head);
+		System.out.println(head.printForward());
+		removeDuplicate_runner(clone);
+		System.out.println(clone.printForward());
 	}
 	
 }

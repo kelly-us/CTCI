@@ -37,4 +37,17 @@ public class AssortedMethods {
 			System.out.println();
 		}
 	}
+	
+	public static ListNode randomLinkedList(int N, int min, int max){
+		ListNode root = new ListNode(randomIntInRange(min, max), null, null);
+		ListNode prev = root;
+		for(int i = 1; i < N; ++i){
+			int data = randomIntInRange(min, max);
+			ListNode next = new ListNode(data, null, null);
+			prev.setNext(next);
+			prev = next;
+		}
+		return root;
+	}
+	
 }

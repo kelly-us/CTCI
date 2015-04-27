@@ -6,15 +6,15 @@ import CTCI.CTCILibrary.ListNode;
 public class split {
 
 	/*
-	 * ¡¾solution¡¿
+	 * [solution]
 		Maintain two dummy nodes to track the less than sublist and greater than or equal to sublist. 
 		In the end, merge the two sublists.
-		¡¾time¡¿
+		[time]
 		O(n)
-		¡¾space¡¿
+		[space]
 		O(1)
 	 */
-	public ListNode splitList(ListNode head, int x){
+	public static ListNode splitList(ListNode head, int x){
 		if(head == null) return null;
 		
 		ListNode before = null;
@@ -45,5 +45,18 @@ public class split {
 		}
 		before.next = after;
 		return head;
+	}
+	
+	public static void main(String args[]){
+		int length = 10;
+		ListNode[] nodes = new ListNode[length];
+		for(int i = 0; i < length; ++i){
+			nodes[i] = new ListNode(i >= length / 2 ? length - 1 - i : i, null, i > 0 ? nodes[i-1] : null);
+		}
+		
+		ListNode head = nodes[0];
+		System.out.println(head.printForward());
+		ListNode head2 = splitList(head, 3);
+		System.out.println(head2.printForward());
 	}
 }
