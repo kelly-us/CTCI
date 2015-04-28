@@ -27,6 +27,31 @@ public class Tower {
 		t.add(top);
 	}
 	
+	//use stack to mimic the recursive process, each push represent a condition
+	 /*
+	 struct op{
+	 	int begin, end;
+	 	int src, bri, dst;
+	 }
+
+	 void hanoi(int n, int src, int bri, int dst){
+	 	stack<op> s;
+	 	s.push(op(1, n, src, bri, dst));
+	 	while(!s.isEmpty()){
+	 		op tmp = s.peek();
+	 		s.pop();
+	 		if(tmp.begin != tmp.end){
+	 			s.push(op(tmp.begin, tmp.end - 1, tmp.bri, tmp.src, tmp.dst));
+	 			s.push(op(tmp.end, tmp.end, tmp.src, tmp.bri, tmp.dst));
+	 			s.push(op(tmp.begin, tmp.end - 1, tmp.src, tmp.dst, tmp.bri));
+	 		}else{
+	 			System.out.println("Move disk " + tmp.begin + " from " + tmp.src + " to " + tmp.dst);
+	 		}
+	 	}
+	 }
+	 	
+	 */
+	
 	public void moveDisk(int n, Tower destination, Tower buffer){
 		if(n > 0){
 			System.out.println("move " + n + "disks from " + index + " to " + buffer.index + " with buffer " + destination.index);

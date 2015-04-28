@@ -7,6 +7,20 @@ import java.util.Stack;
 import CTCI.CTCILibrary.AssortedMethods;
 
 //C3-3.5
+/*
+ * [solution]
+when adding x to the queue, just push it to the first stack.
+when removing from the queue:
+1)if the second stack is not empty, directly pop from the second stack
+2)else if the first stack is not empty, shift all elements to the second stack, and pop from the second stack
+3)else throw exception
+[time]
+add O(1), remove and peek operates in O(n)
+[space]
+O(n)
+[gist]
+https://gist.github.com/kelly-us/ca1854a0b3d928a2db46
+ */
 public class MyQueue<T> {
 	Stack<T> s1, s2;
 	
